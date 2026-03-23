@@ -2,120 +2,184 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <title>RuanRamos</title>
+  <title>Para Meu Amor ❤️</title>
 
   <style>
     body {
-      font-family: Arial, sans-serif;
       margin: 0;
-      background: #f4f4f4;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+      text-align: center;
+      color: white;
+      overflow-x: hidden;
     }
 
     header {
-      background: #333;
-      color: white;
-      padding: 15px;
-      text-align: center;
+      padding: 50px 20px;
     }
 
-    nav {
-      background: #555;
-      padding: 10px;
-      text-align: center;
-    }
-
-    nav a {
-      color: white;
-      margin: 0 10px;
-      text-decoration: none;
-    }
-
-    nav a:hover {
-      text-decoration: underline;
-    }
-
-    .container {
-      padding: 20px;
+    h1 {
+      font-size: 3em;
+      text-shadow: 2px 2px 5px rgba(0,0,0,0.3);
     }
 
     .card {
       background: white;
-      padding: 15px;
-      margin-bottom: 15px;
-      border-radius: 8px;
-      box-shadow: 0 0 5px rgba(0,0,0,0.1);
+      color: #333;
+      margin: 20px auto;
+      padding: 20px;
+      border-radius: 20px;
+      width: 90%;
+      max-width: 500px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    }
+
+    img {
+      width: 100%;
+      border-radius: 15px;
+      margin-top: 10px;
     }
 
     button {
-      padding: 10px 15px;
+      background: #ff6b81;
       border: none;
-      background: #333;
+      padding: 10px 20px;
       color: white;
+      border-radius: 10px;
       cursor: pointer;
-      border-radius: 5px;
-      font-size: 14px;
+      margin-top: 10px;
     }
 
     button:hover {
-      background: #555;
+      background: #ff4757;
     }
 
     footer {
-      background: #333;
-      color: white;
-      text-align: center;
-      padding: 10px;
-      margin-top: 20px;
+      margin: 40px;
+    }
+
+    /* Corações */
+    .heart {
+      position: fixed;
+      top: -10px;
+      color: red;
+      font-size: 20px;
+      animation: fall linear infinite;
+    }
+
+    @keyframes fall {
+      to {
+        transform: translateY(100vh);
+        opacity: 0;
+      }
     }
   </style>
 </head>
 
 <body>
 
-<header>
-  <h1>Ruan</h1>
-  <p>Bem-vindo ao meu site privado</p>
-</header>
+  <!-- Música -->
+  <audio autoplay loop>
+    <source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_c8b6f3b7b0.mp3?filename=romantic-music-ambient-11071.mp3" type="audio/mpeg">
+  </audio>
 
-<nav>
-  <a href="#">Início</a>
-  <a href="#">Sobre</a>
-  <a href="https://wa.me/5553997094670" target="_blank">Contato</a>
-</nav>
-
-<div class="container">
+  <header>
+    <h1>Para o Amor da Minha Vida ❤️</h1>
+    <p>Feito com muito carinho 💕</p>
+  </header>
 
   <div class="card">
-    <h2>Seção Principal</h2>
-    <p>Este é um exemplo de site simples com HTML, CSS e JavaScript.</p>
+    <h2>⏳ Nosso Tempo Juntos</h2>
+    <p id="contador"></p>
   </div>
 
   <div class="card">
-    <h2>Interação</h2>
-    <p>Clique no botão abaixo:</p>
-    <button onclick="mostrarMensagem()">Clique aqui</button>
-  </div>
+    <h2>💌 Mensagem</h2>
+    <p>
+      Você é a pessoa que transforma meus dias em algo especial.  
+      Te amar é a melhor coisa que já aconteceu comigo ❤️
+    </p>
 
-  <div class="card">
-    <h2>Meu Instagram</h2>
-    <p>Se quer aprender me chama:</p>
-
-    <a href="https://instagram.com/ruannn05_" target="_blank">
-      <button>Ir para Instagram</button>
+    <a href="https://wa.me/5500000000000?text=Eu%20te%20amo%20❤️" target="_blank">
+      <button>Enviar mensagem romântica 💖</button>
     </a>
   </div>
 
-</div>
+  <div class="card">
+    <h2>📸 Nossas Fotos</h2>
+    <img src="https://images.unsplash.com/photo-1518199266791-5375a83190b7">
+    <img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e">
+    <img src="https://images.unsplash.com/photo-1504198453319-5ce911bafcde">
+  </div>
 
-<footer>
-  <p>© 2026 Meu Site</p>
-</footer>
+  <footer>
+    Feito com ❤️ para você
+  </footer>
 
-<script>
-  function mostrarMensagem() {
-    alert("Você clicou no botão!");
-  }
-</script>
+  <script>
+    // 📅 DATA QUE VOCÊS COMEÇARAM
+    const dataInicio = new Date("2024-07-27");
+
+    function atualizarContador() {
+      const agora = new Date();
+
+      let anos = agora.getFullYear() - dataInicio.getFullYear();
+      let meses = agora.getMonth() - dataInicio.getMonth();
+      let dias = agora.getDate() - dataInicio.getDate();
+
+      let horas = agora.getHours() - dataInicio.getHours();
+      let minutos = agora.getMinutes() - dataInicio.getMinutes();
+
+      if (minutos < 0) {
+        minutos += 60;
+        horas--;
+      }
+
+      if (horas < 0) {
+        horas += 24;
+        dias--;
+      }
+
+      if (dias < 0) {
+        meses--;
+        const ultimoMes = new Date(agora.getFullYear(), agora.getMonth(), 0);
+        dias += ultimoMes.getDate();
+      }
+
+      if (meses < 0) {
+        meses += 12;
+        anos--;
+      }
+
+      document.getElementById("contador").innerText =
+        anos + " anos, " +
+        meses + " meses, " +
+        dias + " dias, " +
+        horas + " horas e " +
+        minutos + " minutos 💞";
+    }
+
+    setInterval(atualizarContador, 1000);
+    atualizarContador();
+
+    // 💖 corações caindo
+    function criarCoracao() {
+      const heart = document.createElement("div");
+      heart.classList.add("heart");
+      heart.innerText = "❤️";
+
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.animationDuration = (2 + Math.random() * 3) + "s";
+
+      document.body.appendChild(heart);
+
+      setTimeout(() => {
+        heart.remove();
+      }, 5000);
+    }
+
+    setInterval(criarCoracao, 300);
+  </script>
 
 </body>
 </html>
