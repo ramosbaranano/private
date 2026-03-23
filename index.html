@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>Site private</title>
+  <title>Meu Site</title>
 
   <style>
     body {
@@ -12,10 +12,20 @@
       text-align: center;
     }
 
+    /* TOPO PRETO */
     header {
-      background-color: #333;
+      background-color: black;
       color: white;
       padding: 20px;
+    }
+
+    .foto {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-top: 10px;
+      border: 3px solid white;
     }
 
     .card {
@@ -27,32 +37,42 @@
       box-shadow: 0 0 10px rgba(0,0,0,0.1);
     }
 
-    .btn {
-      display: inline-block;
+    /* BOTÕES EM BAIXO UM DO OUTRO */
+    .botoes {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
       margin-top: 10px;
-      padding: 10px 15px;
-      background-color: #007BFF;
+    }
+
+    /* BOTÃO MARROM */
+    .btn {
+      background-color: #8B4513;
       color: white;
+      padding: 10px 15px;
       text-decoration: none;
       border-radius: 5px;
     }
 
     .btn:hover {
-      background-color: #0056b3;
+      background-color: #5a2e0c;
     }
 
+    /* INSTAGRAM MARROM */
     .insta {
-      display: inline-block;
-      margin-top: 10px;
-      padding: 10px 15px;
-      background-color: #E1306C;
+      background-color: #8B4513;
       color: white;
+      padding: 10px 15px;
       text-decoration: none;
       border-radius: 5px;
     }
 
     .insta:hover {
-      background-color: #c72c5c;
+      background-color: #5a2e0c;
+    }
+
+    html {
+      scroll-behavior: smooth;
     }
 
     footer {
@@ -65,25 +85,41 @@
 </head>
 <body>
 
+  <!-- TOPO -->
   <header>
     <h1>Meu Site</h1>
+
+    <!-- FOTO -->
+    <img src="https://sl.bing.net/hlU6KnQ1hsW" class="foto">
+
     <p>Bem-vindo 👋</p>
   </header>
 
+  <!-- CONTEÚDO -->
   <div class="card">
-    <h2></h2>
-    <p>Este é meu site pessoal simples.</p>
+    <h2>Início</h2>
+    <p>PortalPro.</p>
 
-    <a class="btn" href="#">Saiba mais</a>
+    <!-- BOTÕES LADO A LADO -->
+    <div class="botoes">
+      <a class="btn" href="#sobre">Saiba mais</a>
 
-    <br><br>
-
-    <!-- TROQUE SEU_USUARIO PELO SEU INSTAGRAM -->
-    <a class="insta" href="https://instagram.com/ruannn05_" target="_blank">
-      Meu Instagram
-    </a>
+      <a class="insta" href="https://instagram.com/PortalPro" target="_blank">
+        Instagram
+      </a>
+    </div>
   </div>
 
+  <!-- SOBRE -->
+  <div id="sobre" class="card">
+    <h2>Sobre mim</h2>
+    <p>
+      PortalPro é uma plataforma profissional que ajuda na organização
+      de informações, divulgação de projetos e fortalecimento da presença
+      digital, apoiando o uso da tecnologia no trabalho de forma prática e eficiente.
+  </div>
+
+  <!-- RODAPÉ -->
   <footer>
     <p>© 2026 Meu Site</p>
   </footer>
