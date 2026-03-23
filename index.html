@@ -2,275 +2,119 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <title>BetHn</title>
+  <title>Site de Ruan</title>
+
   <style>
     body {
+      font-family: Arial, sans-serif;
       margin: 0;
-      font-family: Arial;
-      background: #0b1220;
-      color: white;
+      background: #f4f4f4;
     }
 
     header {
-      background: #111827;
+      background: #333;
+      color: white;
       padding: 15px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+      text-align: center;
     }
 
-    .logo {
-      color: #22c55e;
-      font-size: 22px;
-      font-weight: bold;
+    nav {
+      background: #555;
+      padding: 10px;
+      text-align: center;
+    }
+
+    nav a {
+      color: white;
+      margin: 0 10px;
+      text-decoration: none;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
     }
 
     .container {
-      display: flex;
-    }
-
-    .sidebar {
-      width: 250px;
-      background: #111827;
-      height: 100vh;
-      padding: 15px;
-    }
-
-    .main {
-      flex: 1;
       padding: 20px;
     }
 
     .card {
-      background: #1f2937;
+      background: white;
       padding: 15px;
-      border-radius: 10px;
       margin-bottom: 15px;
+      border-radius: 8px;
+      box-shadow: 0 0 5px rgba(0,0,0,0.1);
     }
 
     button {
-      background: #22c55e;
+      padding: 10px 15px;
       border: none;
-      padding: 8px 12px;
-      border-radius: 5px;
+      background: #333;
+      color: white;
       cursor: pointer;
-      color: black;
-      font-weight: bold;
-      margin: 5px 0;
+      border-radius: 5px;
+      font-size: 14px;
     }
 
     button:hover {
-      background: #16a34a;
+      background: #555;
     }
 
-    input {
-      padding: 8px;
-      width: 100%;
-      margin-top: 5px;
-      margin-bottom: 10px;
-    }
-
-    .match {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .odds button {
-      margin-left: 5px;
-    }
-
-    .hidden {
-      display: none;
-    }
-
-    .history {
-      font-size: 14px;
-      color: #d1d5db;
+    footer {
+      background: #333;
+      color: white;
+      text-align: center;
+      padding: 10px;
+      margin-top: 20px;
     }
   </style>
 </head>
+
 <body>
 
 <header>
-  <div class="logo">🎰 BetHn</div>
-  <div>Saldo: R$ <span id="balance">1000</span></div>
+  <h1>Ruan</h1>
+  <p>Bem-vindo ao meu site privado</p>
 </header>
 
-<div id="loginScreen" class="main">
+<nav>
+  <a href="#">Início</a>
+  <a href="#">Sobre</a>
+  <a href="#">Contato</a>
+</nav>
+
+<div class="container">
+
   <div class="card">
-    <h2>Login</h2>
-    <input id="username" placeholder="Usuário">
-    <input id="password" type="password" placeholder="Senha">
-    <button onclick="login()">Entrar</button>
+    <h2>Seção Principal</h2>
+    <p>Este é um exemplo de site simples com HTML, CSS e JavaScript.</p>
   </div>
+
+  <div class="card">
+    <h2>Interação</h2>
+    <p>Clique no botão abaixo:</p>
+    <button onclick="mostrarMensagem()">Clique aqui</button>
+  </div>
+
+  <div class="card">
+    <h2>Meu Instagram</h2>
+    <p>Me siga nas redes sociais:</p>
+
+    <a href="https://instagram.com/ruannn05_" target="_blank">
+      <button>Ir para Instagram</button>
+    </a>
+  </div>
+
 </div>
 
-<div id="app" class="container hidden">
-
-  <div class="sidebar">
-    <h3>Menu</h3>
-    <button onclick="showSection('matches')">Partidas</button>
-    <button onclick="showSection('history')">Histórico</button>
-    <button onclick="logout()">Sair</button>
-
-    <hr>
-
-    <h4>Aposta</h4>
-    <div id="betSlip">Nenhuma aposta selecionada</div>
-    <input type="number" id="betAmount" placeholder="Valor">
-    <button onclick="placeBet()">Apostar</button>
-  </div>
-
-  <div class="main">
-
-    <div id="matchesSection">
-      <h2>Partidas</h2>
-
-      <div class="card">
-        <div class="match">
-          <span>Time A vs Time B</span>
-          <div class="odds">
-            <button onclick="selectBet('Time A', 1.8)">1.8</button>
-            <button onclick="selectBet('Time B', 2.1)">2.1</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="match">
-          <span>Time C vs Time D</span>
-          <div class="odds">
-            <button onclick="selectBet('Time C', 1.5)">1.5</button>
-            <button onclick="selectBet('Time D', 2.5)">2.5</button>
-          </div>
-        </div>
-      </div>
-
-    </div>
-
-    <div id="historySection" class="hidden">
-      <h2>Histórico</h2>
-      <div id="history"></div>
-    </div>
-
-  </div>
-</div>
+<footer>
+  <p>© 2026 Meu Site</p>
+</footer>
 
 <script>
-let balance = localStorage.getItem("balance") || 1000;
-let selectedBet = null;
-
-document.getElementById("balance").innerText = balance;
-
-function login() {
-  const user = document.getElementById("username").value;
-  const pass = document.getElementById("password").value;
-
-  if (user && pass) {
-    document.getElementById("loginScreen").classList.add("hidden");
-    document.getElementById("app").classList.remove("hidden");
-  } else {
-    alert("Preencha os campos");
+  function mostrarMensagem() {
+    alert("Você clicou no botão!");
   }
-}
-
-function logout() {
-  location.reload();
-}
-
-function showSection(section) {
-  document.getElementById("matchesSection").classList.add("hidden");
-  document.getElementById("historySection").classList.add("hidden");
-
-  if (section === "matches") {
-    document.getElementById("matchesSection").classList.remove("hidden");
-  } else {
-    document.getElementById("historySection").classList.remove("hidden");
-    loadHistory();
-  }
-}
-
-function selectBet(team, odd) {
-  selectedBet = { team, odd };
-  document.getElementById("betSlip").innerText =
-    `${team} (Odd: ${odd})`;
-}
-
-function placeBet() {
-  const amount = parseFloat(document.getElementById("betAmount").value);
-
-  if (!selectedBet) {
-    alert("Selecione uma aposta");
-    return;
-  }
-
-  if (!amount || amount <= 0) {
-    alert("Valor inválido");
-    return;
-  }
-
-  if (amount > balance) {
-    alert("Saldo insuficiente");
-    return;
-  }
-
-  // Simulação
-  const win = Math.random() < 0.5;
-
-  let resultText = "";
-  let profit = 0;
-
-  if (win) {
-    profit = amount * selectedBet.odd;
-    balance += profit;
-    resultText = "GANHOU";
-  } else {
-    balance -= amount;
-    resultText = "PERDEU";
-  }
-
-  localStorage.setItem("balance", balance);
-  document.getElementById("balance").innerText = balance;
-
-  saveHistory(selectedBet.team, amount, resultText, profit);
-
-  alert(`Resultado: ${resultText}`);
-}
-
-function saveHistory(team, amount, result, profit) {
-  let history = JSON.parse(localStorage.getItem("history")) || [];
-
-  history.push({
-    team,
-    amount,
-    result,
-    profit,
-    date: new Date().toLocaleString()
-  });
-
-  localStorage.setItem("history", JSON.stringify(history));
-}
-
-function loadHistory() {
-  const history = JSON.parse(localStorage.getItem("history")) || [];
-  const container = document.getElementById("history");
-
-  container.innerHTML = "";
-
-  history.forEach(h => {
-    const div = document.createElement("div");
-    div.className = "card history";
-    div.innerHTML = `
-      <strong>${h.team}</strong><br>
-      Valor: R$ ${h.amount}<br>
-      Resultado: ${h.result}<br>
-      Lucro: R$ ${h.profit}<br>
-      Data: ${h.date}
-    `;
-    container.appendChild(div);
-  });
-}
 </script>
 
 </body>
