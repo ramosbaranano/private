@@ -1,11 +1,13 @@
 <!DOCTYPE html>
+
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ruan Dev - Sites Profissionais</title>
-  
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
+<title>Ruan Dev - Sites que geram clientes</title>
+
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
 
 <style>
 * {
@@ -18,7 +20,6 @@
 body {
   background: #0d0d1a;
   color: #fff;
-  scroll-behavior: smooth;
 }
 
 /* NAVBAR */
@@ -31,21 +32,14 @@ header {
   background: rgba(0,0,0,0.4);
   display: flex;
   justify-content: space-between;
-  align-items: center;
   z-index: 1000;
 }
-
-header h3 { font-weight: 700; }
 
 nav a {
   color: white;
   margin-left: 25px;
   text-decoration: none;
-  font-weight: 500;
-  transition: 0.3s;
 }
-
-nav a:hover { color: #00f7ff; }
 
 /* HERO */
 .hero {
@@ -55,23 +49,28 @@ nav a:hover { color: #00f7ff; }
   justify-content: center;
   align-items: center;
   text-align: center;
-  padding: 20px;
   background: linear-gradient(270deg, #00f7ff, #0066ff, #8a2be2);
   background-size: 600% 600%;
   animation: gradientMove 12s ease infinite;
 }
 
-.hero h1 { font-size: 52px; margin-bottom: 20px; }
-.hero span { color: #00f7ff; }
-.hero p { max-width: 650px; opacity: 0.85; margin-bottom: 30px; }
+.hero h1 {
+  font-size: 48px;
+  max-width: 800px;
+}
+
+.hero p {
+  max-width: 600px;
+  margin: 20px 0;
+  opacity: 0.9;
+}
 
 .btn {
   padding: 15px 30px;
   background: #00f7ff;
   color: #000;
-  font-weight: bold;
   border-radius: 30px;
-  border: none;
+  font-weight: bold;
   cursor: pointer;
   transition: 0.3s;
 }
@@ -83,119 +82,91 @@ nav a:hover { color: #00f7ff; }
 
 /* SECTIONS */
 .section {
-  max-width: 1100px;
-  margin: auto;
   padding: 100px 20px;
   text-align: center;
 }
 
-.section h2 {
-  font-size: 36px;
-  margin-bottom: 40px;
+.section:nth-child(even) {
+  background: rgba(255,255,255,0.02);
 }
 
-/* CARDS */
 .cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
   gap: 25px;
+  max-width: 1100px;
+  margin: auto;
 }
 
-.card {
+.card, .price {
   background: rgba(255,255,255,0.05);
   padding: 25px;
   border-radius: 15px;
-  backdrop-filter: blur(10px);
-  transition: 0.4s;
-  opacity: 0;
-  transform: translateY(50px);
+  border: 1px solid rgba(255,255,255,0.1);
 }
 
-.card.show {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.card:hover {
-  transform: translateY(-10px) scale(1.03);
-}
-
-/* PRICES */
-.price {
-  background: rgba(255,255,255,0.08);
-  padding: 30px;
-  border-radius: 15px;
-  transition: 0.3s;
-}
-
-.price:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 30px #00f7ff;
-}
-
-/* SOCIAL */
-.social a {
-  margin: 0 10px;
-  color: #00f7ff;
-  text-decoration: none;
-  font-size: 18px;
-}
-
-/* FLOATING WHATSAPP */
+/* WHATS */
 .whatsapp {
   position: fixed;
-  bottom: 25px;
-  right: 25px;
+  bottom: 20px;
+  right: 20px;
   background: #25D366;
   padding: 18px;
   border-radius: 50%;
-  font-size: 22px;
-  color: #fff;
-  text-decoration: none;
-  box-shadow: 0 0 15px #25D366;
-  transition: 0.3s;
+  color: white;
 }
 
-.whatsapp:hover { transform: scale(1.1); }
+/* MOBILE */
+@media (max-width:600px){
+  .hero h1 { font-size: 32px; }
+}
 
-/* FOOTER */
-footer { text-align: center; padding: 40px; opacity: 0.6; }
-
-/* ANIMATION */
 @keyframes gradientMove {
   0% { background-position: 0% }
   50% { background-position: 100% }
   100% { background-position: 0% }
 }
-
 </style>
+
 </head>
+
 <body>
 
 <header>
   <h3>Ruan Dev</h3>
   <nav>
     <a href="#servicos">Serviços</a>
+    <a href="#portfolio">Portfólio</a>
     <a href="#precos">Preços</a>
-    <a href="#contato">Contato</a>
   </nav>
 </header>
 
 <section class="hero">
-  <h1>Transforme seu negócio com um <span>site profissional</span></h1>
-  <p>Criação de sites modernos, responsivos e prontos para gerar clientes para você.</p>
-  <button class="btn" onclick="irWhats()">Solicitar orçamento</button>
+  <h1>Crie um site que traz clientes todos os dias</h1>
+  <p>Sites rápidos, modernos e feitos para gerar vendas no WhatsApp.</p>
+  <p>🔥 Mais de 20 projetos entregues</p>
+  <button class="btn" onclick="irWhats()">Quero meu site agora</button>
+  <p style="margin-top:10px;color:#fff;">⚠️ Vagas limitadas essa semana</p>
 </section>
 
 <section class="section" id="servicos">
-  <h2>O que oferecemos</h2>
+  <h2>O que você recebe</h2>
   <div class="cards">
-    <div class="card">⚡ Sites rápidos e modernos</div>
-    <div class="card">📱 Responsivo para celular e computador</div>
-    <div class="card">💬 Botão de WhatsApp integrado</div>
-    <div class="card">📸 Instagram integrado</div>
-    <div class="card">🎨 Design profissional e moderno</div>
-    <div class="card">🚀 Pronto para vender seus produtos ou serviços</div>
+    <div class="card">⚡ Site rápido e profissional</div>
+    <div class="card">📱 Funciona perfeito no celular</div>
+    <div class="card">💬 Botão direto pro WhatsApp</div>
+    <div class="card">🎨 Design moderno</div>
+    <div class="card">🚀 Pronto para vender</div>
+    <div class="card">🛠️ Suporte garantido</div>
+  </div>
+</section>
+
+<section class="section" id="portfolio">
+  <h2>Projetos</h2>
+  <div class="cards">
+    <div class="card">💈 Site para barbearia</div>
+    <div class="card">🛍️ Loja online</div>
+    <div class="card">📈 Landing page de vendas</div>
   </div>
 </section>
 
@@ -204,28 +175,29 @@ footer { text-align: center; padding: 40px; opacity: 0.6; }
   <div class="cards">
     <div class="price">
       <h3>Básico</h3>
-      <p>1 página + WhatsApp + Instagram</p>
-      <h2>R$50 - R$150</h2>
+      <p>1 página + WhatsApp</p>
+      <h2>R$197</h2>
     </div>
     <div class="price">
       <h3>Profissional</h3>
-      <p>Site completo + animações + design profissional</p>
-      <h2>R$150 - R$400</h2>
+      <p>Site completo + design premium</p>
+      <h2>R$397</h2>
     </div>
     <div class="price">
       <h3>Premium</h3>
-      <p>Site completo + personalização total + suporte</p>
-      <h2>R$400+</h2>
+      <p>Site completo + suporte + personalização</p>
+      <h2>R$697+</h2>
     </div>
   </div>
 </section>
 
-<section class="section" id="contato">
-  <h2>Fale comigo</h2>
-  <p>Chame no WhatsApp para solicitar seu site agora mesmo.</p>
-  <button class="btn" onclick="irWhats()">Ir para WhatsApp</button>
-  <div class="social" style="margin-top:20px;">
-    <a href="https://instagram.com/ruannn05_" target="_blank">📸 Instagram</a>
+<section class="section">
+  <h2>Por que escolher a Ruan Dev?</h2>
+  <div class="cards">
+    <div class="card">✅ Entrega rápida</div>
+    <div class="card">✅ Atendimento direto</div>
+    <div class="card">✅ Preço justo</div>
+    <div class="card">✅ Foco em resultado</div>
   </div>
 </section>
 
@@ -233,21 +205,12 @@ footer { text-align: center; padding: 40px; opacity: 0.6; }
   <p>© 2026 - Ruan Dev</p>
 </footer>
 
-<a class="whatsapp" href="https://wa.me/5553997094670" target="_blank">💬</a>
+<a class="whatsapp" href="https://wa.me/5553997094670?text=Quero%20um%20site%20profissional" target="_blank">💬</a>
 
 <script>
 function irWhats() {
-  window.open("https://wa.me/5553997094670", "_blank");
+  window.open("https://wa.me/5553997094670?text=Quero%20um%20site%20profissional", "_blank");
 }
-
-// scroll animation
-window.addEventListener("scroll", () => {
-  document.querySelectorAll(".card").forEach(card => {
-    if(card.getBoundingClientRect().top < window.innerHeight - 100){
-      card.classList.add("show");
-    }
-  });
-});
 </script>
 
 </body>
